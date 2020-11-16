@@ -1,0 +1,57 @@
+﻿@model ProjAvaliacaoP2.tb_consulta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Data da Consulta
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_consulta)
+        </dd>
+
+        <dt>
+            Observação
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observacao)
+        </dd>
+
+        <dt>
+            Clínica
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_clinica.nome)
+        </dd>
+
+        <dt>
+            Médico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_medico.nome)
+        </dd>
+
+        <dt>
+            Paciente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_paciente.nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

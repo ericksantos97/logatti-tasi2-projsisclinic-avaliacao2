@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProjAvaliacaoP2.tb_consulta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listar</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Data da Consulta
+        </th>
+        <th>
+            Observação
+        </th>
+        <th>
+            Ação
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_consulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observacao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detalhar", "Details", new { id = item.id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
